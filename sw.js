@@ -1,6 +1,6 @@
 // Guarda la "carcasa" de la app para abrir sin red. Los datos viven en IndexedDB, no aquí.
-const V = 'atnjuv-e4acf7a610';
-const SHELL = ['./', 'index.html', 'app.js?v=e4acf7a610', 'styles.css?v=e4acf7a610', 'manifest.webmanifest', 'icon-192.png', 'logo.png'];
+const V = 'atnjuv-3b5f39615d';
+const SHELL = ['./', 'index.html', 'app.js?v=3b5f39615d', 'styles.css?v=3b5f39615d', 'manifest.webmanifest', 'icon-192.png', 'logo.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', (e) => {
